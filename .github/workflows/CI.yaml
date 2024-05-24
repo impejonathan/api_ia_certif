@@ -1,46 +1,31 @@
-name: CD
+name: CI
 
 on:
   push:
     branches: [ dev ]
 
 jobs:
-  build_CD:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
 
-    - name: Install Docker
-      run: |
-        sudo apt-get update
-        sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
-        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-        sudo apt-get update
-        sudo apt-get install docker-ce
+    - name: Set up Python 3.10.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.8
 
-    - name: Change working directory
-      run: cd projet/api
-
-    - name: Login to Docker Hub
+    - name: Install dependencies
       run: |
-        echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_LOGIN }}" --password-stdin
+        python -m pip install --upgrade pip
+        pip install -r projet/requirements.txt
+      continue-on-error: true
 
-    - name: Build and Push Docker Image
-      run: |
-        docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t "${{ secrets.DOCKER_LOGIN }}"/api_ia_certif .
-        docker push "${{ secrets.DOCKER_LOGIN }}"/api_ia_certif
 
-    - name: Install Azure CLI
+    - name: Test with pytest
       run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-    - name: Login to Azure
-      run: |
-        az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
-
-    - name: Restart Azure Container
-      run: |
-        az container restart --name api-ia-certif --resource-group Impe_Jonathan
+        cd projet/api/tests
+        pytest test_quality_api.py
+      continue-on-error: true
