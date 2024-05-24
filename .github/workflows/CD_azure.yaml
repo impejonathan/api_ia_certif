@@ -6,24 +6,17 @@ on:
 
 jobs:
   build_CD_azure:
+
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Azure Login
+    - name: 'Login to Azure'
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-        
-    - name: Restart Azure container
-      uses: azure/CLI@v2
-      with:
-        azcliversion: 2.0.80
-        inlineScript: |
-          az account set --subscription ${{ secrets.SUBSCRIPTION_ID }}
-          az container restart --name api-ia-certif --resource-group Impe_Jonathan
-
-    - name: Logout of Azure
-      run: az logout
+    - name: 'Restart ACI container'
+      run: |
+        az group deployment delete --name myDeployment --resource-group myResourceGroup
+        az group deployment create --name myDeployment --resource-group myResourceGroup --template-file ./template.json --parameters parameter1=value1 parameter2=value2
+      env:
+        AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
