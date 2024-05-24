@@ -1,0 +1,22 @@
+name: CD_azure
+
+on:
+  push:
+    branches: [ dev ]
+
+jobs:
+  build_CD:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Azure login
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Restart Azure container
+      run: |
+        az container restart --name api-ia-certif --resource-group Impe_Jonathan
