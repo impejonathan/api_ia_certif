@@ -5,23 +5,19 @@ on:
     branches: [ dev ]
 
 jobs:
-  build_CD_azure:
+  restart_azure_container:
 
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-    - name: Azure login
+    - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: '{
-          "clientId": "${{ secrets.AZURE_CLIENT_ID }}",
-          "clientSecret": "${{ secrets.AZURE_CLIENT_SECRET }}",
-          "subscriptionId": "${{ secrets.AZURE_SUBSCRIPTION_ID }}",
-          "tenantId": "${{ secrets.AZURE_TENANT_ID }}"
-        }'
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Restart Azure container
+    - name: Restart Azure Container Instance
       run: |
-        az container restart --name api-ia-certif --resource-group Impe_Jonathan
+        az container restart --resource-group Impe_Jonathan --name api-ia-certif --subscription 111aaa69-41b9-4dfd-b6af-2ada039dd1ae
