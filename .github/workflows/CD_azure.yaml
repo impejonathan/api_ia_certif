@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v2
 
     - name: Login to Azure
@@ -20,6 +20,3 @@ jobs:
     - name: Restart Azure container
       run: |
         az container restart --name api-ia-certif --resource-group Impe_Jonathan
-
-    - name: Logout of Azure
-      run: az logout
