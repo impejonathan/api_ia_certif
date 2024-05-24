@@ -9,19 +9,21 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout
+    - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Login to Azure
+    - name: Azure Login
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+        
     - name: Restart Azure container
-      run: |
-        az container restart --name api-ia-certif --resource-group Impe_Jonathan
-      env:
-        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-        AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+      uses: azure/CLI@v2
+      with:
+        azcliversion: 2.0.80
+        inlineScript: |
+          az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          az container restart --name api-ia-certif --resource-group Impe_Jonathan
+
+    - name: Logout of Azure
+      run: az logout
