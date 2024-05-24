@@ -5,7 +5,7 @@ on:
     branches: [ dev ]
 
 jobs:
-  build_CD:
+  build_CD_azure:
 
     runs-on: ubuntu-latest
 
