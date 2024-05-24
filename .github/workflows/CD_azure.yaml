@@ -6,20 +6,17 @@ on:
 
 jobs:
   build_CD_azure:
-
     runs-on: ubuntu-latest
-
     steps:
-    - name: 'Set up environment'
-      run: |
-        echo "ACTIONS_ID_TOKEN_REQUEST_URL=$ACTIONS_ID_TOKEN_REQUEST_URL" >> $GITHUB_ENV
-    - name: 'Login to Azure'
-      uses: azure/login@v1
-      with:
-        client-id: ${{ secrets.AZURE_CLIENT_ID }}
-        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
-        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
-    - name: 'Restart ACI container'
-      run: |
-        az container restart --name api-ia-certif --resource-group Impe_Jonathan
+      - name: Authentification Azure
+        uses: actions/setup-azure-auth@v3
+        with:
+          azure-login: true
+          credentials: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Redémarrage du conteneur Azure
+        run: |
+          az container group restart \
+            --resource-group Impe_Jonathan \
+            --name api-ia-certif \
+            --location FranceCentral
