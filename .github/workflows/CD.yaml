@@ -5,7 +5,8 @@ on:
     branches: [ dev ]
 
 jobs:
-  build_and_push:
+  build_CD:
+
     runs-on: ubuntu-latest
 
     steps:
@@ -29,28 +30,14 @@ jobs:
         docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t impejonathan/api_ia_certif ./projet/api
         docker push impejonathan/api_ia_certif
 
-  restart_azure:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Install Azure CLI
+    - name: Login to Azure CLI
       run: |
-        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-
-    - name: Login to Azure
-      env:
-        AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
-        AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
-        AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
-      run: |
-        az login --service-principal --username $AZURE_CLIENT_ID --password $AZURE_CLIENT_SECRET --tenant $AZURE_TENANT_ID
+        az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }} --allow-no-subscriptions
 
     - name: Set Azure Subscription
-      env:
-        AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       run: |
-        az account set --subscription $AZURE_SUBSCRIPTION_ID
+        az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
-    - name: Restart Azure Container
+    - name: Restart Azure Container Instance
       run: |
-        az container restart --name api-ia-certif --resource-group Impe_Jonathan
+        az containergroup restart --name api-ia-certif --resource-group Impe_Jonathan
