@@ -1,4 +1,4 @@
-name: CD
+name: CD.yaml
 
 on:
   push:
@@ -30,10 +30,11 @@ jobs:
         docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t impejonathan/api_ia_certif ./projet/api
         docker push impejonathan/api_ia_certif
 
-    - name: Login to Azure CLI
-      run: |
-        az login --service-principal -u "${{ secrets.CLIENT_ID }}" -p "${{ secrets.CLIENT_SECRET }}" --tenant "${{ secrets.TENANT_ID }}" --allow-no-subscriptions
+    - name: Login to Azure
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Restart Azure Container Instance
+    - name: Restart Azure Container
       run: |
-        az containergroup restart --name api-ia-certif --resource-group Impe_Jonathan
+        az container restart --name api-ia-certif --resource-group Impe_Jonathan
