@@ -5,8 +5,7 @@ on:
     branches: [ dev ]
 
 jobs:
-  build_CD:
-
+  build_and_push:
     runs-on: ubuntu-latest
 
     steps:
@@ -29,3 +28,19 @@ jobs:
       run: |
         docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t impejonathan/api_ia_certif ./projet/api
         docker push impejonathan/api_ia_certif
+
+  restart_azure:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+    - name: Login to Azure
+      run: |
+        az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
+    - name: Restart Azure Container
+      run: |
+        az container restart --name api-ia-certif --resource-group Impe_Jonathan
