@@ -12,8 +12,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Set up Docker
-      uses: actions/setup-docker@v1
+    - name: Install Docker
+      run: |
+        sudo apt-get update
+        sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+        curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+        sudo apt-get update
+        sudo apt-get install docker-ce
 
     - name: Login to Docker Hub
       run: |
@@ -24,9 +30,14 @@ jobs:
         docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t "${{ secrets.DOCKER_LOGIN }}"/api_ia_certif .
         docker push "${{ secrets.DOCKER_LOGIN }}"/api_ia_certif
 
+    - name: Install Azure CLI
+      run: |
+        curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
+
+    - name: Login to Azure
+      run: |
+        az login --service-principal --username ${{ secrets.AZURE_CLIENT_ID }} --password ${{ secrets.AZURE_CLIENT_SECRET }} --tenant ${{ secrets.AZURE_TENANT_ID }}
+
     - name: Restart Azure Container
-      uses: azure/container-instance-restart@v1
-      with:
-        resource-group: Impe_Jonathan
-        container-group: api-ia-certif
-        azure-creds: ${{ secrets.AZURE_CREDENTIALS }}
+      run: |
+        az container restart --name api-ia-certif --resource-group Impe_Jonathan
