@@ -30,13 +30,13 @@ jobs:
         docker build --build-arg DB_SERVER="${{ secrets.DB_SERVER }}" --build-arg DB_DATABASE="${{ secrets.DB_DATABASE }}" --build-arg DB_USERNAME="${{ secrets.DB_USERNAME }}" --build-arg DB_PASSWORD="${{ secrets.DB_PASSWORD }}" --build-arg SECRET_KEY="${{ secrets.SECRET_KEY }}" --build-arg TOKEN="${{ secrets.TOKEN }}" -t impejonathan/api_ia_certif ./projet/api
         docker push impejonathan/api_ia_certif
 
+    - name: Create Azure authentication file
+      run: |
+        echo "[{'clientId': '${{ secrets.CLIENT_ID }}', 'clientSecret': '${{ secrets.CLIENT_SECRET }}', 'tenant': '${{ secrets.TENANT_ID }}', 'subscriptionId': '${{ secrets.AZURE_SUBSCRIPTION_ID }}'}]" > azure_auth.json
+
     - name: Login to Azure CLI
       run: |
-        az login --service-principal -u ${{ secrets.CLIENT_ID }} -p ${{ secrets.CLIENT_SECRET }} --tenant ${{ secrets.TENANT_ID }} --allow-no-subscriptions
-
-    - name: Set Azure Subscription
-      run: |
-        az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+        az login --service-principal-file azure_auth.json --allow-no-subscriptions
 
     - name: Restart Azure Container Instance
       run: |
