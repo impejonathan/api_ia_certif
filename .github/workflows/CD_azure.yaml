@@ -16,8 +16,11 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
     - name: Restart Azure Container Instance
       run: |
-        az container restart --resource-group Impe_Jonathan --name api-ia-certif --subscription 111aaa69-41b9-4dfd-b6af-2ada039dd1ae
+        az container restart --resource-group Impe_Jonathan --name api-ia-certif --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
