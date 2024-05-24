@@ -22,7 +22,7 @@ jobs:
       with:
         azcliversion: 2.0.80
         inlineScript: |
-          az account set --subscription ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          az account set --subscription ${{ secrets.SUBSCRIPTION_ID }}
           az container restart --name api-ia-certif --resource-group Impe_Jonathan
 
     - name: Logout of Azure
