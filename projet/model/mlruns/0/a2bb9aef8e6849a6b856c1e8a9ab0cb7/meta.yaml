@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/a2bb9aef8e6849a6b856c1e8a9ab0cb7/artifacts
+deleted_time: 1714134142132
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: a2bb9aef8e6849a6b856c1e8a9ab0cb7
+run_name: bemused-ape-492
+run_uuid: a2bb9aef8e6849a6b856c1e8a9ab0cb7
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1714133938724
+status: 1
+tags: []
+user_id: impej

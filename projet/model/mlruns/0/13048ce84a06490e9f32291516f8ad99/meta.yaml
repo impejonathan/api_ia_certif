@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/13048ce84a06490e9f32291516f8ad99/artifacts
+end_time: 1713966545715
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 13048ce84a06490e9f32291516f8ad99
+run_name: burly-midge-668
+run_uuid: 13048ce84a06490e9f32291516f8ad99
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713966495308
+status: 3
+tags: []
+user_id: impej

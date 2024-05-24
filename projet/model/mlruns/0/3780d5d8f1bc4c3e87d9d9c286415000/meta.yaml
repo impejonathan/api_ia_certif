@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/3780d5d8f1bc4c3e87d9d9c286415000/artifacts
+end_time: 1713967992926
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 3780d5d8f1bc4c3e87d9d9c286415000
+run_name: delightful-wolf-167
+run_uuid: 3780d5d8f1bc4c3e87d9d9c286415000
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713967954853
+status: 3
+tags: []
+user_id: impej

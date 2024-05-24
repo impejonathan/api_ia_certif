@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/83de321b7ced4ee9884b4e156d184bc3/artifacts
+end_time: 1713964787971
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 83de321b7ced4ee9884b4e156d184bc3
+run_name: glamorous-asp-20
+run_uuid: 83de321b7ced4ee9884b4e156d184bc3
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713964772792
+status: 3
+tags: []
+user_id: impej

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/0fccac22c12e49288fabbed4161ac609/artifacts
+end_time: 1713965183666
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0fccac22c12e49288fabbed4161ac609
+run_name: abrasive-mouse-136
+run_uuid: 0fccac22c12e49288fabbed4161ac609
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713965161403
+status: 3
+tags: []
+user_id: impej

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/1bf607b7ae5041688baefc94cca4cc2d/artifacts
+end_time: 1716365020074
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 1bf607b7ae5041688baefc94cca4cc2d
+run_name: kindly-snipe-792
+run_uuid: 1bf607b7ae5041688baefc94cca4cc2d
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716364983573
+status: 3
+tags: []
+user_id: impej

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/8ab880e7336d4d92ab0eac53f07ef737/artifacts
+end_time: 1713947968317
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 8ab880e7336d4d92ab0eac53f07ef737
+run_name: powerful-dove-929
+run_uuid: 8ab880e7336d4d92ab0eac53f07ef737
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713947962270
+status: 3
+tags: []
+user_id: impej

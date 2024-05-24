@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/46372820814543edb21229ecb07e3b4e/artifacts
+end_time: 1713865740030
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 46372820814543edb21229ecb07e3b4e
+run_name: likeable-fawn-514
+run_uuid: 46372820814543edb21229ecb07e3b4e
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713865739899
+status: 3
+tags: []
+user_id: impej

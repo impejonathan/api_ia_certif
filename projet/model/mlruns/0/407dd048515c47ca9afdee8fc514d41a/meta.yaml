@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/407dd048515c47ca9afdee8fc514d41a/artifacts
+end_time: 1716294212444
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 407dd048515c47ca9afdee8fc514d41a
+run_name: abundant-goat-999
+run_uuid: 407dd048515c47ca9afdee8fc514d41a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1716294174282
+status: 3
+tags: []
+user_id: impej

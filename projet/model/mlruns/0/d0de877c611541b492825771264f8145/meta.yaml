@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/d0de877c611541b492825771264f8145/artifacts
+end_time: 1713884072514
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: d0de877c611541b492825771264f8145
+run_name: orderly-carp-926
+run_uuid: d0de877c611541b492825771264f8145
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713884072396
+status: 3
+tags: []
+user_id: impej

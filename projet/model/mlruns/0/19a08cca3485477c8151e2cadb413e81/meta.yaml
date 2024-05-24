@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/19a08cca3485477c8151e2cadb413e81/artifacts
+end_time: 1713880900216
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 19a08cca3485477c8151e2cadb413e81
+run_name: rebellious-koi-746
+run_uuid: 19a08cca3485477c8151e2cadb413e81
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713880900088
+status: 3
+tags: []
+user_id: impej

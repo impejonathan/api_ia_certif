@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/e31736365121420598b74b945482d1b5/artifacts
+end_time: 1713965813487
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: e31736365121420598b74b945482d1b5
+run_name: bald-eel-899
+run_uuid: e31736365121420598b74b945482d1b5
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713965773233
+status: 3
+tags: []
+user_id: impej

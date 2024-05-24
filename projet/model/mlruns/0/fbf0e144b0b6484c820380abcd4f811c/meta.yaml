@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/fbf0e144b0b6484c820380abcd4f811c/artifacts
+end_time: 1713967927783
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: fbf0e144b0b6484c820380abcd4f811c
+run_name: gifted-rat-711
+run_uuid: fbf0e144b0b6484c820380abcd4f811c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713967891932
+status: 3
+tags: []
+user_id: impej

@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/65b65b353a684644bca951cf949ed1ef/artifacts
+end_time: 1713967503829
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 65b65b353a684644bca951cf949ed1ef
+run_name: placid-crab-733
+run_uuid: 65b65b353a684644bca951cf949ed1ef
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713967451811
+status: 3
+tags: []
+user_id: impej

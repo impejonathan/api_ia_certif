@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/322ee91ba65d417493060d91d8cc4040/artifacts
+end_time: 1713960536352
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 322ee91ba65d417493060d91d8cc4040
+run_name: secretive-whale-462
+run_uuid: 322ee91ba65d417493060d91d8cc4040
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713960529002
+status: 3
+tags: []
+user_id: impej

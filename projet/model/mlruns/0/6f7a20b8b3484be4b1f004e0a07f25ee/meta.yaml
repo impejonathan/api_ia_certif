@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/6f7a20b8b3484be4b1f004e0a07f25ee/artifacts
+end_time: 1713961531189
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 6f7a20b8b3484be4b1f004e0a07f25ee
+run_name: upbeat-gnu-560
+run_uuid: 6f7a20b8b3484be4b1f004e0a07f25ee
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713961524681
+status: 3
+tags: []
+user_id: impej

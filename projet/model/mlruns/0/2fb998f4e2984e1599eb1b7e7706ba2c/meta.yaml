@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2fb998f4e2984e1599eb1b7e7706ba2c/artifacts
+end_time: 1713961735055
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2fb998f4e2984e1599eb1b7e7706ba2c
+run_name: nervous-panda-93
+run_uuid: 2fb998f4e2984e1599eb1b7e7706ba2c
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713961728867
+status: 3
+tags: []
+user_id: impej

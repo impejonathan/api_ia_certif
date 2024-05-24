@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/2873233d7c864f4686fa9445e98c29fc/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 2873233d7c864f4686fa9445e98c29fc
+run_name: efficient-fox-163
+run_uuid: 2873233d7c864f4686fa9445e98c29fc
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713882659507
+status: 1
+tags: []
+user_id: impej

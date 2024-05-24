@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/623ff7b6bc854c0babb595de037afd3a/artifacts
+end_time: 1713965128350
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 623ff7b6bc854c0babb595de037afd3a
+run_name: silent-pig-886
+run_uuid: 623ff7b6bc854c0babb595de037afd3a
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713965105059
+status: 3
+tags: []
+user_id: impej

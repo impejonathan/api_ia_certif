@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/0/ffc7ef004e6d4c58a05208a3f4186fe1/artifacts
+end_time: 1713960860349
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ffc7ef004e6d4c58a05208a3f4186fe1
+run_name: handsome-snail-508
+run_uuid: ffc7ef004e6d4c58a05208a3f4186fe1
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1713960854210
+status: 3
+tags: []
+user_id: impej
