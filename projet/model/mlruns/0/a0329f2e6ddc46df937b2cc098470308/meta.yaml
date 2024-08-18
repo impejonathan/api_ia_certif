@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/a0329f2e6ddc46df937b2cc098470308/artifacts
+deleted_time: 1723826979490
+end_time: 1723811000069
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: a0329f2e6ddc46df937b2cc098470308
+run_name: bustling-frog-372
+run_uuid: a0329f2e6ddc46df937b2cc098470308
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723810971781
+status: 3
+tags: []
+user_id: impej

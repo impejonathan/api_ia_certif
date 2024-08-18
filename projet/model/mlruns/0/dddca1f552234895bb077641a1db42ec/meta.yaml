@@ -1,0 +1,16 @@
+artifact_uri: mlflow-artifacts:/0/dddca1f552234895bb077641a1db42ec/artifacts
+deleted_time: 1723826979491
+end_time: 1723810898925
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: deleted
+run_id: dddca1f552234895bb077641a1db42ec
+run_name: auspicious-swan-771
+run_uuid: dddca1f552234895bb077641a1db42ec
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1723810870189
+status: 3
+tags: []
+user_id: impej

@@ -31,24 +31,7 @@ def predict(nouveau_produit):
     Returns:
         prediction[0] : La prédiction du modèle pour le nouveau produit.
     """
-    # try:
-    #     # Charger le modèle depuis le dossier
-    #     model_path = os.path.join(os.path.dirname(__file__), '..','model', 'mlarticats', '0')
-    #     # Obtenir la liste des sous-dossiers
-    #     subdirs = os.listdir(model_path)
-    #     # Trier la liste et sélectionner le dernier élément
-    #     subdir = sorted(subdirs)[-1]
-    #     # Charger le modèle
-    #     with open(os.path.join(model_path, subdir, 'model.pkl'), 'rb') as f:
-    #         model = pickle.load(f)
-    # except Exception as e:
-    #     print(f"Erreur lors du chargement du modèle de MLflow : {e}")
-    #     # Si le chargement du modèle de MLflow a échoué, charger le modèle à partir du fichier pickle
-    #     pickle_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
-    #     with open(pickle_path, 'rb') as f:
-    #         model = pickle.load(f)
-    
-    
+
     try:
         # Charger le modèle à partir du fichier pickle
         pickle_path = os.path.join(os.path.dirname(__file__), 'model.pkl')
